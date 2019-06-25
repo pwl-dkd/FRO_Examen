@@ -1,22 +1,21 @@
 <template>
   <div id="app">
-    <Brands />
-    
+    <Product />
+
   </div>
 </template>
 
 <script>
 
-import Brands from '../components/layout/Brands/Brands';
+import Product from '../components/layout/SingleProduct/Product';
 
 
 export default {
-  name: 'Brand',
-  components: {
-    Brands,
+    name: 'SingleProduct',
+    components: {
+      Product,
+    }
   }
-}
-  
 </script>
 
 <style>

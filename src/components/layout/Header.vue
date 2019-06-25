@@ -16,8 +16,8 @@
             </div> 
 
             <div class="side"  id="right">
-                <i class="fas fa-shopping-cart"></i>
-                <i class="far fa-user"></i>
+                <i class="icontje fas fa-shopping-cart"></i>
+                <!-- <i class="icontje far fa-user"></i> -->
             </div>
         </div>
         <div id="nav">
@@ -29,13 +29,19 @@
             <router-link class="header_link" to="/contact">CONTACT</router-link>
         </div>
 
-          <div v-on:click="close_sidenav" id="side_menu" class="side-nav">
-                <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
-                <a class="balk-knopies" href="#aboutMe">Over mij</a>
-                <a class="balk-knopies" href="#projecten">Projecten</a>
-                <a class="balk-knopies" href="#skills">Skills</a>
-                <a class="balk-knopies" href="#contact">Contact</a>
+        <div>
+            <div  id="side_menu" class="side-nav">
+                <!-- <a href="#" class="btn-close" v-on:click="close_sidenav">&times;</a> -->
+                <router-link class="balk-knopies" to="/">HOME</router-link>
+                <router-link class="balk-knopies" to="/collection">COLLECTION</router-link>
+                <router-link class="balk-knopies" to="/brands">BRANDS</router-link>
+                <router-link class="balk-knopies" to="/sale">SALE</router-link>
+                <router-link class="balk-knopies" to="/events">EVENTS</router-link>
+                <router-link class="balk-knopies" to="/contact">CONTACT</router-link>
             </div>
+            <div v-on:click="close_sidenav" id="background"></div>
+        </div>
+
     </header>
 </template>
 
@@ -44,18 +50,104 @@ export default {
     name: "Header" ,
     methods: {
         open_sidenav : function() {
-            console.log('epic open');
+            // console.log('open_sidenav');
+            let background = document.getElementById('background');
+
+            // console.log(background);
+
             document.getElementById('side_menu').style.width = '250px';
+            background.setAttribute(
+                    "style", "background-color:rgba(0, 0, 0, 0.432); width: calc(100% );");
         },
         close_sidenav : function() {
-             console.log(' epi close');
+            let background = document.getElementById('background');
+
             document.getElementById('side_menu').style.width = '0';
+
+            background.setAttribute(
+                    "style", "background-color:rgba(0, 0, 0, 0.0); width:0;");
         },
+        scroll_header : function () {
+            let currentPage = this.$router.currentRoute.name;
+            console.log(currentPage);
+            let topscroll;
+            
+            if(currentPage == 'product' || currentPage == 'brand') {
+                topscroll = 60;
+            } else {
+                topscroll = 500;
+            }
+
+            
+            if (document.documentElement.scrollTop > topscroll ) {
+
+                if(currentPage != 'product' && currentPage != 'brand') {
+                    if (window.innerWidth > 764) {
+                    document.getElementById("header").setAttribute(
+                    "style", "background: #D77000; ");
+                    }
+                }
+
+                if (window.innerWidth > 988) {
+                    
+                    document.getElementById("nav").setAttribute(
+                    "style", "width:70%;          position: absolute; top: 0px; right: 15%;");
+                    
+                    document.getElementById("center").style.display = 'none';
+                }
+
+                if (window.innerWidth < 988) {
+                    
+                    document.getElementById("center").style.display = 'inline-block';
+                }
+
+                // console.log('if3');
+
+            } else {
+
+                // console.log('else');
+
+                if (window.innerWidth > 764) {
+                    if(currentPage != 'product' && currentPage != 'brand') {
+                        document.getElementById("header").setAttribute(
+                        "style", "background: #linear-gradient(to bottom, #25211e 0%, rgba(37,33,30,0) 100%);  ");
+                    }
+                }
+
+                if (window.innerWidth > 988) {
+                    document.getElementById("nav").setAttribute(
+                    "style", "width:100%;      transform: translate(0%, 0px); ");
+                    document.getElementById("center").style.display = 'inline-block';
+                }
+            }
+        },
+    
+        header_background : function () {
+          let currentPage = this.$router.currentRoute.name;  
+          console.log('curren page van background is '+ currentPage);
+            if(currentPage == 'product' && currentPage == 'brand') {      
+                document.getElementById("header").setAttribute("style", "background: #D77000; ");
+            } else {
+                console.log('ecpc else');
+                document.getElementById("header").setAttribute(
+                "style", " background: linear-gradient(to bottom, #25211e 0%, rgba(37,33,30,0) 100%) !important;  ");
+            }
+        }
     },
     created () {
-        window.addEventListener('scroll', this.handleScroll)
+        var currentPage = this.$router.currentRoute.name;
+        window.addEventListener('scroll', this.scroll_header);
+        window.addEventListener('resize', this.scroll_header);
+        // window.addEventListener('load', this.header_background);
+        window.addEventListener('DOMContentLoaded', this.header_background);
+        // this.header_background();
+        
+
     }
 }
+
+
+
 
 var header =  document.getElementById("header");
 // var text_logo = document.getElementById('text_logo');
@@ -78,31 +170,31 @@ var header =  document.getElementById("header");
 
 // console.log(header);
 
-function scrollFunction() {
-    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 480) {
-        document.getElementById("header").setAttribute(
-            "style", "background: #D77000; ");
+// function scrollFunction() {
+//     // if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 480) {
+//     //     document.getElementById("header").setAttribute(
+//     //         "style", "background: #D77000; ");
 
-        if (window.innerWidth > 988) {
-            document.getElementById("nav").setAttribute(
-        "style", "width:70%;          position: absolute; top: 0px; right: 15%;");
-            document.getElementById("center").style.display = 'none';
-        }
+//     //     if (window.innerWidth > 988) {
+//     //         document.getElementById("nav").setAttribute(
+//     //     "style", "width:70%;          position: absolute; top: 0px; right: 15%;");
+//     //         document.getElementById("center").style.display = 'none';
+//     //     }
 
-    } else {
-        document.getElementById("header").setAttribute(
-        "style", "background: #linear-gradient(to bottom, #25211e 0%, rgba(37,33,30,0) 100%);  ");
+//     // } else {
+//     //     document.getElementById("header").setAttribute(
+//     //     "style", "background: #linear-gradient(to bottom, #25211e 0%, rgba(37,33,30,0) 100%);  ");
 
-        if (window.innerWidth > 988) {
-            document.getElementById("nav").setAttribute(
-            "style", "width:100%;      transform: translate(0%, 0px); ");
-            document.getElementById("center").style.display = 'inline-block';
-        }
-    }
+//     //     if (window.innerWidth > 988) {
+//     //         document.getElementById("nav").setAttribute(
+//     //         "style", "width:100%;      transform: translate(0%, 0px); ");
+//     //         document.getElementById("center").style.display = 'inline-block';
+//     //     }
+//     // }
 
 
     
-}
+// }
 
 
 
@@ -115,7 +207,7 @@ function scrollFunction() {
 
 <style scoped>
     #header {
-        background:#333;
+        /* background:#333; */
         position: fixed;
         top: 0;
         left: 0;
@@ -124,16 +216,24 @@ function scrollFunction() {
         /* height: 120px; */
         overflow: hidden;
         background: linear-gradient(to bottom, #25211e 0%, rgba(37,33,30,0) 100%);
-        /* text-align: center; */
+        text-align: center;
         transition: all .3s ease;
+        z-index: 1;
 
     }
 
     .side {
+        padding: 20px;
         height: 60px;
         width: 15%;
-        background-color: red;
+        /* background-color: red; */
         display: inline-block; 
+    }
+
+    .icontje {
+        margin: 0 15px 0 15px;
+        margin-top:0;
+        font-size:20px;
     }
 
     .bread {
@@ -185,9 +285,8 @@ function scrollFunction() {
         display: inline-table;
         font-size: 13px;
         padding: 20px 33px 0px 33px;
-
         font-weight: 700;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: Lato, Helvetica, sans-serif;
         text-decoration: none;
     }
 
@@ -218,7 +317,7 @@ function scrollFunction() {
     height:100%;
     width:0;
     position:fixed;
-    z-index:1;
+    z-index:2;
     top:0;
     left:0;
     background-color:#D77000;
@@ -226,6 +325,19 @@ function scrollFunction() {
     overflow-x:hidden;
     padding-top:60px;
     transition:0.5s;
+}
+
+.balk-knopies {font-family: Lato, Helvetica, sans-serif;}
+
+#background {
+    height:100vh;
+    width: 0;
+    position:fixed;
+    z-index:1;
+    top:0;
+    right:0;
+    transition: none;
+    /* background-color: rgba(0, 0, 0, 0.432); */
 }
 
 .side-nav a{
@@ -273,7 +385,21 @@ function scrollFunction() {
         .bread {
             display:block;
         }
+
+        #header {
+        background:#D77000 ; 
+        }
     }
+
+    @media screen and (max-width:764px) {
+        #nav {
+            background-color:none;
+        }
+
+        
+
+    }
+    
 
 
 </style>

@@ -1,16 +1,26 @@
 <template>
   <div id="app">
     <Banner />
+    <Sellers />
+    <About />
+    <Gallery />
+    <Review />
+    <Instagram />
     <!-- <img width="1000px" src="https://images.pexels.com/photos/1502352/pexels-photo-1502352.jpeg"> -->
-    <AddTodo  v-on:add-todo="addTodo"/>
-    <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo"/>
-    <div class="height-box">testing</div>
+    <!-- <AddTodo  v-on:add-todo="addTodo"/>
+    <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo"/> -->
+    <!-- <div class="height-box">testing</div> -->
   </div>
 </template>
 
 <script>
 
-import Banner from '../components/layout/Banner';
+import Banner from '../components/layout/home/Banner';
+import Sellers from '../components/layout/home/Sellers';
+import About from '../components/layout/home/About';
+import Gallery from '../components/layout/home/Gallery';
+import Review from '../components/layout/home/Review';
+import Instagram from '../components/layout/home/Instagram';
 
 import Todos from '../components/Todos';
 import AddTodo from '../components/AddTodo';
@@ -21,6 +31,11 @@ export default {
   name: 'Home',
   components: {
     Banner,
+    Sellers,
+    About,
+    Review,
+    Gallery,
+    Instagram,
     Todos,
     AddTodo
   },
@@ -69,7 +84,7 @@ created() {
   }
 
   body {
-    font-family: Arial;
+    font-family: Lato;
     line-height: 1.4
   }
 
