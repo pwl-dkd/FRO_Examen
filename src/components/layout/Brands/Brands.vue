@@ -108,7 +108,7 @@ export default {
 
 
   .container {
-      padding: 80px 15px 30px 15px;
+      padding: 0px 15px 30px 15px;
       width: 1230px;
       margin:auto;
   }
@@ -169,7 +169,7 @@ export default {
 
 @media screen and (max-width:1230px) {
     .container {
-      padding: 80px 50px 30px 50px;
+      padding: 0px 50px 30px 50px;
         width: 100%;
     }
 
@@ -178,7 +178,7 @@ export default {
 
   @media screen and (max-width:1200px) {
     .container {
-      padding: 80px 50px 30px 50px;
+      padding: 0px 50px 30px 50px;
         /* width: 940px; */
     }
 
@@ -196,7 +196,7 @@ export default {
 
   @media screen and (max-width: 980px) {
     .container {
-      padding: 80px 0px 30px 0px;
+      padding: 0px 0px 30px 0px;
         width: 100%;
     }
 
@@ -212,7 +212,7 @@ export default {
 
   @media screen and (max-width: 650px) {
     .container {
-      padding: 80px 0px 30px 0px;
+      padding: 0px 0px 30px 0px;
       }
 
       .grid_item_img {

@@ -1,6 +1,19 @@
 <template>
-  <div class="contact">
-    <h1>Contact</h1>
-    <p>This is the contact</p>
+  <div id="app">
+    <Banner />
+
   </div>
 </template>
+
+<script>
+
+import Banner from '../components/layout/About/Banner';
+
+
+export default {
+    name: 'Contact',
+    components: {
+      Banner,
+    }
+  }
+</script>

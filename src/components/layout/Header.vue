@@ -27,17 +27,19 @@
             <router-link class="header_link" to="/sale">SALE</router-link>
             <router-link class="header_link" to="/events">EVENTS</router-link>
             <router-link class="header_link" to="/contact">CONTACT</router-link>
+            <router-link class="header_link" to="/about">ABOUT</router-link>
         </div>
 
         <div>
-            <div  id="side_menu" class="side-nav">
+            <div v-on:click="close_sidenav" id="side_menu" class="side-nav">
                 <!-- <a href="#" class="btn-close" v-on:click="close_sidenav">&times;</a> -->
                 <router-link class="balk-knopies" to="/">HOME</router-link>
                 <router-link class="balk-knopies" to="/collection">COLLECTION</router-link>
                 <router-link class="balk-knopies" to="/brands">BRANDS</router-link>
                 <router-link class="balk-knopies" to="/sale">SALE</router-link>
                 <router-link class="balk-knopies" to="/events">EVENTS</router-link>
-                <router-link class="balk-knopies" to="/contact">CONTACT</router-link>
+                <router-link class="balk-knopies" to="/contact">CoONTACT</router-link>
+                <router-link class="balk-knopies" to="/about">ABOUT</router-link>
             </div>
             <div v-on:click="close_sidenav" id="background"></div>
         </div>
@@ -60,6 +62,7 @@ export default {
                     "style", "background-color:rgba(0, 0, 0, 0.432); width: calc(100% );");
         },
         close_sidenav : function() {
+            console.log('close nav');
             let background = document.getElementById('background');
 
             document.getElementById('side_menu').style.width = '0';
@@ -108,7 +111,7 @@ export default {
                 // console.log('else');
 
                 if (window.innerWidth > 764) {
-                    if(currentPage != 'product' && currentPage != 'brand') {
+                    if(currentPage != 'product'  && currentPage != 'brand') {
                         document.getElementById("header").setAttribute(
                         "style", "background: #linear-gradient(to bottom, #25211e 0%, rgba(37,33,30,0) 100%);  ");
                     }
@@ -125,7 +128,7 @@ export default {
         header_background : function () {
           let currentPage = this.$router.currentRoute.name;  
           console.log('curren page van background is '+ currentPage);
-            if(currentPage == 'product' && currentPage == 'brand') {      
+            if(currentPage == 'product' || currentPage == 'brand') {      
                 document.getElementById("header").setAttribute("style", "background: #D77000; ");
             } else {
                 console.log('ecpc else');
