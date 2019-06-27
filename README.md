@@ -27,3 +27,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+link naar project: http://24676.hosts1.ma-cloud.nl/vue_gedoe
