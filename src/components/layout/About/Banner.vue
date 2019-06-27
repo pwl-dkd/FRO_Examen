@@ -3,7 +3,7 @@
   <div class="banner_background">
     <div class="grid">
       <div>
-        <img width="420" src="../../../assets/images/about/logo.png">
+        <img id="logo" width="420" src="../../../assets/images/about/logo.png">
       </div>
       <div id="about_text_div">
         <h1 id="about" class="title" >ABOUT</h1>
@@ -81,7 +81,6 @@ export default {
 }
 
 #text {
-  /* display:inline-block; */
   height:139px;
       width: 71%;
 }
@@ -89,6 +88,64 @@ export default {
 .align_text {
       display: inline-block;
 }
+
+@media screen and (max-width: 1200px) {
+    .grid {
+        width: 100%;
+    }
+    #logo {
+      margin-left:5px;
+    }
+    #about_text_div {
+        padding-left: 15%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .title {
+    font-size: 90px;
+  }
+
+  .grid {
+    grid-template-columns:auto ;
+  }
+  #about_text_div {
+    margin-top:50px;
+    padding-left:3%;
+    width: 100%;
+    margin-bottom:50px;
+  }
+
+  #text {
+      height:auto;
+      width: 78%;
+  }
+
+}
+
+
+
+
+/* @media screen and (max-width: 505px) {
+
+  #text {
+      height:auto;
+      width: 80%;
+  }
+
+} */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </style>

@@ -39,7 +39,7 @@ export default {
     line-height: 1.4
   }
 
-  .btn {
+  /* .btn {
     background: #555;
     display: inline-block;
     color: #fff;
@@ -49,5 +49,5 @@ export default {
 
   .btn:hover {
     background: #666;
-  }
+  } */
 </style>
