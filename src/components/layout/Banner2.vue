@@ -109,11 +109,11 @@ export default {
       background-color: #cccccc;
       height: 100vh;
       width:100%;
-      /* background-attachment: fixed; */
+      background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      /* transition: all 300ms ease; */
+      transition: all 100ms ease;
   }
 
   .grid-container {
@@ -149,7 +149,8 @@ export default {
 
   .grid_title {
     font-size: 34px;
-    font-family: bebas;
+    /* font-family: bebas; */
+    font-family: 'Staatliches';
   }
 
   .grid_sub_title {

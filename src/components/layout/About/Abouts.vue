@@ -86,8 +86,8 @@
                 <p>Monday - Saturday 10am - 9:30pm</p>
                 <p>Sunday: 11am - 7pm</p>
             </div>
-            <img class="Location_image" id="Location_image_image" width="420" src="../../../assets/images/about/group.jpg">
-            <div class="Location_image" id="Location_image_div" width="420" v-bind:style="{ backgroundImage:  'url(' + require(`../../../assets/images/about/group.jpg`) + ')' }"></div>
+            <img class="Location_image" id="Location_image_image" width="420" src="../../../assets/images/about/maps.png">
+            <div class="Location_image" id="Location_image_div" width="420" v-bind:style="{ backgroundImage:  'url(' + require(`../../../assets/images/about/maps.png`) + ')' }"></div>
         </div>
         <div class="section">
             <div v-bind:style="{ backgroundImage:  'url(' + require(`../../../assets/images/about/store.jpg`) + ')' }" class="store_image">
@@ -158,7 +158,7 @@ export default {
   name: "Abouts",
 }
 
-console.log('ik ben hier');
+
 
 
 </script>
@@ -315,7 +315,9 @@ console.log('ik ben hier');
 }
 
 .stats_container_grid {
-    background-image: url('https://images.unsplash.com/photo-1504051569746-b952af8e65e7');
+    /* background-image: url('https://images.unsplash.com/photo-1504051569746-b952af8e65e7'); */
+    /* background-image: url('https://images.unsplash.com/photo-1504051569746-b952af8e65e7'); */
+    background-image: url(../../../assets/images/about/background.png) ;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -379,7 +381,8 @@ color:white;
     text-align:center;
     font-weight: 100;
     font-size: 40px;
-    font-family: 'bebas neue';
+    /* font-family: 'bebas neue'; */
+    font-family: 'Staatliches';
     color: #666565;
     margin-bottom: 23px;
 }
@@ -390,7 +393,8 @@ color:white;
     text-align:center;
     font-weight: 100;
     font-size: 40px;
-    font-family: 'bebas neue';
+    /* font-family: 'bebas neue'; */
+    font-family: 'Staatliches';
     color: #666565;
 }
 
@@ -483,7 +487,7 @@ color:white;
 .store_image {
     width:100%;
     height: 27vh;
-    background-color: red;
+    /* background-color: red; */
     background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -528,7 +532,7 @@ color:white;
 .founder_img {
     width:100%;
     height: 395px;
-    background-color: red;
+    /* background-color: red; */
     background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

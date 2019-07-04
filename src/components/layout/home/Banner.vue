@@ -51,17 +51,18 @@ export default {
         var gridTitle = document.getElementsByClassName("grid_title");
         // var banner = document.getElementsById("banner");
       
+        if (window.innerWidth > 880) {
+          gridItem[index].setAttribute(
+          "style", "background-color:#00000054; padding-top: calc(91vh - 170px); ");
 
-        gridItem[index].setAttribute(
-        "style", "background-color:#00000054; padding-top: calc(91vh - 170px); ");
+          gridTitle[index].setAttribute(
+          "style", "color:rgba(255, 255, 255, 1); ");
 
-        gridTitle[index].setAttribute(
-        "style", "color:rgba(255, 255, 255, 1); ");
-
-        let img_url = 'url(../../../assets/images/home/banner/'+index+'.jpg);';
-        document.getElementById("banner").setAttribute(
-        "style", 'background-image: url("'+require(`../../../assets/images/home/banner/${index}.jpg`)+' ")');
-
+        
+          let img_url = 'url(../../../assets/images/home/banner/'+index+'.jpg);';
+          document.getElementById("banner").setAttribute(
+          "style", 'background-image: url("'+require(`../../../assets/images/home/banner/${index}.jpg`)+' ")');
+        }
 
       },
       grid_item_leave: function(index) {
@@ -104,6 +105,7 @@ export default {
       background-color: #cccccc;
       height: 100vh;
       width:100%;
+      background-image: url(../../../assets/images/home/banner/2.jpg) ;
       /* background-attachment: fixed; */
       background-position: center;
       background-repeat: no-repeat;
@@ -123,6 +125,10 @@ export default {
     font-size: 30px;
     text-align: center;
     transition: .2s all ease;
+    background: rgb(2,0,36);
+background: linear-gradient(360deg, rgba(2, 0, 36, 0.082) 0%, rgba(0,212,255,0) 100%);
+
+
   }
 
   /* .grid-item:hover {
@@ -144,7 +150,8 @@ export default {
 
   .grid_title {
     font-size: 34px;
-    font-family: bebas;
+    /* font-family: bebas; */
+    font-family: 'Staatliches';
     text-shadow: 0px 0px 3px rgba(150, 150, 150, 1);
   }
 
@@ -163,6 +170,41 @@ export default {
       }
       
   }
+
+
+    @media screen and (max-width:880px) {
+
+      .grid-container {
+
+        grid-template-columns: auto;
+
+      }
+
+      .grid-item:nth-child(1) {
+        display:none;
+      }
+      .grid-item:nth-child(2) {
+        width: 100%
+      }
+      .grid-item:nth-child(3) {
+        display:none;
+      }
+
+      .grid_title {color:rgba(255, 255, 255, 1);}
+      
+      .grid-item {
+        /* background: rgb(2,0,36);
+background: linear-gradient(360deg, rgba(2,0,36,0.5218508997429305) 0%, rgba(0,212,255,0) 100%); */
+
+
+background: rgb(2,0,36);
+background: linear-gradient(360deg, rgba(2,0,36,0.38046272493573263) 0%, rgba(0,212,255,0) 100%);
+
+
+
+}
+  }
+
 
 
 </style>

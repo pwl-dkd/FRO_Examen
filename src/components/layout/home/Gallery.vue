@@ -1,9 +1,9 @@
 <template>
 
   <div class="container">
-    <div class="wrapper" id="item1"><div class="container_item"></div></div>
-    <div class="wrapper" id="item2"><div class="container_item" ></div></div>
-    <div class="wrapper" id="item3"><div class="container_item"></div></div>
+    <div class="wrapper" id="item1"><div id="troep1" class="container_item"></div></div>
+    <div class="wrapper" id="item2"><div id="troep2" class="container_item" ></div></div>
+    <div class="wrapper" id="item3"><div id="troep3" class="container_item"></div></div>
   </div> 
     
 </template>
@@ -21,7 +21,7 @@ console.log('hallo');
 
 <style scoped>
 .container {
-    background-color:red;
+    /* background-color:red; */
     width: 100%;
     height: 300px;
     display: grid;
@@ -35,13 +35,32 @@ console.log('hallo');
 
 .container_item{
     height: 100%; 
-    border:1px solid black;
+    /* border:1px solid black; */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(../../../assets/images/home/about.jpg) ;
+    /* background-image: url(../../../assets/images/home/wrap1.png) ;  */
+    /* background-image: url(../../../assets/images/home/about.jpg) ; */
     transition: all .5s;
 }
+
+
+#troep1{
+background-image: url(../../../assets/images/home/wrap1.png) ; 
+}
+
+#troep2{
+background-image: url(../../../assets/images/home/wrap2.png) ; 
+}
+
+#troep3{
+background-image: url(../../../assets/images/home/wrap3.jpg) ; 
+}
+
+
+/* #item1 { background-image: url(../../../assets/images/home/wrap1.gif) ; }
+#item2 { grid-area: left; }
+#item3 { grid-area: right; } */
 
 
 @media screen and (min-width: 980px) {

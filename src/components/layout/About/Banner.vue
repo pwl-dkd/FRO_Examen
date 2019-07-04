@@ -62,7 +62,8 @@ export default {
 .title {
   font-size: 116px;
   margin:0;
-  font-family: 'bebas neue';
+  /* font-family: 'bebas neue'; */
+  font-family: 'Staatliches';
   line-height: 1;
 }
 

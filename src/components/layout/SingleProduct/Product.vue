@@ -26,8 +26,7 @@
 
                 <div id="product_list_field">
                     <p class="product_list"> Delivery time: 2 days</p>
-                    <p class="product_list"> Delivery time: 2 days</p>
-                    <p class="product_list"> Delivery time: 2 days</p>
+                    <p class="product_list"> Free delivery at €50</p>
                 </div>
 
                 <div id="maten_field">
@@ -49,11 +48,13 @@
                             <div v-on:click="total_count(1)" id="plus" class="item1"><i class="fas fa-plus"></i></div>
                             <div style="border-bottom: 1px solid grey;" v-on:click="total_count(-1)" id="min" class="item2"><i class="fas fa-minus"></i></div>
                         </div>
-                        <button id="add_to_cart">Toevoegen aan de winkelmand <span> ></span></button>
+                        <router-link to="/cart">
+                        <button id="add_to_cart">Add to cart <span> ></span></button>
+                        </router-link>
                     </div>
 
                     <div id="product_information_field">
-                        <p class="product_label">Product informatie</p>
+                        <p class="product_label">Product information</p>
                         <p class="product_information_text">ProductinformatieLeveringRetourneringen
                             Performance tech meets futuristic design met de komst van deze Alphaedge 4D
                             trainers van adidas. Deze zwarte heren sneakers zijn ontworpen 
@@ -75,7 +76,7 @@
             <div class="container_grid_item_wrapper">
             <div class="container_grid_item">
                 <a href="#">
-                <div class="grid_item_img" v-bind:style="{ backgroundImage:  'url(' + require(`../../../assets/images/home/instagram/instagram1.jpg`) + ')' }"></div>
+                <div class="grid_item_img" v-bind:style="{ backgroundImage:  'url(' + require(`../../../assets/images/product/related/1.jpg`) + ')' }"></div>
                 </a>
             </div>
             </div>
@@ -83,7 +84,7 @@
             <div class="container_grid_item_wrapper">
             <div class="container_grid_item">
                 <a href="#">
-                <div class="grid_item_img" v-bind:style="{ backgroundImage:  'url(' + require(`../../../assets/images/home/instagram/instagram2.png`) + ')' }"></div>
+                <div class="grid_item_img" v-bind:style="{ backgroundImage:  'url(' + require(`../../../assets/images/product/related/2.jpg`) + ')' }"></div>
                 </a>
             </div>
             </div>
@@ -91,7 +92,7 @@
             <div class="container_grid_item_wrapper">
             <div class="container_grid_item">
                 <a href="#">
-                <div class="grid_item_img" v-bind:style="{ backgroundImage:  'url(' + require(`../../../assets/images/home/instagram/instagram3.jpg`) + ')' }"></div>
+                <div class="grid_item_img" v-bind:style="{ backgroundImage:  'url(' + require(`../../../assets/images/product/related/3.jpg`) + ')' }"></div>
                 </a>
             </div>
             </div>
@@ -99,7 +100,7 @@
             <div class="container_grid_item_wrapper">
             <div class="container_grid_item">
                 <a href="#">
-                <div class="grid_item_img" v-bind:style="{ backgroundImage:  'url(' + require(`../../../assets/images/home/instagram/instagram4.jpg`) + ')' }"></div>
+                <div class="grid_item_img" v-bind:style="{ backgroundImage:  'url(' + require(`../../../assets/images/product/related/4.jpg`) + ')' }"></div>
                 </a>
             </div>
             </div>
@@ -271,7 +272,8 @@ export default {
 .product_title {
     font-weight: 100;
     font-size: 45px;
-    font-family: 'bebas neue';
+    /* font-family: 'bebas neue'; */
+    font-family: 'Staatliches';
     color: #63584C;
 }
 
@@ -436,11 +438,12 @@ export default {
 #img_main {
     width: 652px;
     height:489px;
-    background-color:red;
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 5px;
+    transition: all ease .2s;
 }
 
 #img_thumb_grid {
@@ -551,7 +554,8 @@ export default {
   .container_header_title {
       font-weight: 100;
       font-size: 40px;
-      font-family: 'bebas neue';
+      /* font-family: 'bebas neue'; */
+      font-family: 'Staatliches';
       color:#63584C;
   }
 

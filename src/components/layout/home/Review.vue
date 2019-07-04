@@ -80,7 +80,8 @@ console.log('hallo');
 .container_header_title {
     font-weight: 100;
     font-size: 50px;
-    font-family: 'bebas neue';
+    /* font-family: 'bebas neue'; */
+    font-family: 'Staatliches';
     color:White;
 }
 

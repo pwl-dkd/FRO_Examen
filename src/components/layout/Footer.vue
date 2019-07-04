@@ -64,7 +64,8 @@ export default {
 .collom_title {
     font-weight: 100;
     font-size: 25px;
-    font-family: 'bebas neue';
+    /* font-family: 'bebas neue'; */
+    font-family: 'Staatliches';
     margin-bottom:20px !important;
 }
 

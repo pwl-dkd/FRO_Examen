@@ -11,51 +11,53 @@
             </div>
             <div class="container_grid">
               <div class="container_grid_item_wrapper">
-                <div class="container_grid_item">
-                  <router-link class="header_link" to="/product"> a
-                    <img class="grid_item_img" src="../../../assets/images/home/topsellers/vans.png">
-                  </router-link>
-                </div>
+                <router-link class="header_link" to="/brands">
+                  <div class="container_grid_item">
+                    
+                      <img class="grid_item_img" src="../../../assets/images/home/topsellers/vans.png">
+                    
+                  </div>
+                </router-link>
               </div>
 
               <div class="container_grid_item_wrapper">
-                <div class="container_grid_item">
-                  <a href="#">
+                <router-link class="header_link" to="/brands">
+                  <div class="container_grid_item">
                     <img class="grid_item_img" src="../../../assets/images/home/topsellers/nike.png">
-                  </a>
                 </div>
+                </router-link>
               </div>
 
               <div class="container_grid_item_wrapper">
-                <div class="container_grid_item">
-                  <a href="#">
+                <router-link class="header_link" to="/product">
+                  <div class="container_grid_item">
                     <img class="grid_item_img" src="../../../assets/images/home/topsellers/yeezy.png">
-                  </a>
-                </div>
+                  </div>
+                </router-link>
               </div>
 
               <div class="container_grid_item_wrapper">
-                <div class="container_grid_item">
-                  <a href="#">
+                <router-link class="header_link" to="/product">
+                  <div class="container_grid_item">
                     <img class="grid_item_img" src="../../../assets/images/home/topsellers/jordan.png">
-                  </a>
-                </div>
+                  </div>
+                </router-link>
               </div>
 
               <div class="container_grid_item_wrapper">
-                <div class="container_grid_item">
-                  <a href="#">
+                <router-link class="header_link" to="/product">
+                  <div class="container_grid_item">
                     <img class="grid_item_img" src="../../../assets/images/home/topsellers/fila.png">
-                  </a>
-                </div>
+                  </div>
+                </router-link>
               </div>
 
               <div class="container_grid_item_wrapper">
-                <div class="container_grid_item">
-                  <a href="#">
+                <router-link class="header_link" to="/product">
+                  <div class="container_grid_item">
                     <img class="grid_item_img" src="../../../assets/images/home/topsellers/adidas.png">
-                  </a>
-                </div>
+                  </div>
+                </router-link>
               </div>
             </div>
         </div>
@@ -101,7 +103,8 @@ export default {
   .container_header_title {
       font-weight: 100;
       font-size: 40px;
-      font-family: 'bebas neue';
+      /* font-family: 'bebas neue'; */
+      font-family: 'Staatliches';
       color:#63584C;
   }
 

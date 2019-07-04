@@ -8,6 +8,7 @@ import Sale from './views/Sale.vue'
 import Events from './views/Events.vue'
 import Contact from './views/Contact.vue'
 import SingleProduct from './views/SingleProduct.vue'
+import Shipping from './views/Shipping.vue'
 import PageNotFound from './views/PageNotFound.vue'
 
 
@@ -58,6 +59,11 @@ export default new Router({
       path: '/product',
       name: 'product',
       component: SingleProduct
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: Shipping
     },
     {
       path: '*',

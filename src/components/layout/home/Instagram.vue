@@ -112,7 +112,8 @@ export default {
   .container_header_title {
       font-weight: 100;
       font-size: 40px;
-      font-family: 'bebas neue';
+      /* font-family: 'bebas neue'; */
+      font-family: 'Staatliches';
       color:#63584C;
   }
 
@@ -149,8 +150,7 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
   }
-
-  .container_grid_item:after {
+ /* .container_grid_item:after {
     font-family: "Font Awesome 5 Free";
     content: "\f16d";
     font-size: 30px;
@@ -165,12 +165,12 @@ export default {
     opacity: 0;
     padding-top:calc(50% - 13px);
     font-weight: 900;
-  }
+  } */
 
   .container_grid_item:hover:after{
     opacity: 1;
     background-color:rgba(215, 111, 0, 0.247);
-  }
+  } 
 
 
 

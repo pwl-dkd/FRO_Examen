@@ -10,6 +10,7 @@
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 
+
 export default {
     name:"app",
     components: {
@@ -31,7 +32,6 @@ export default {
   body {
     font-family: Lato, Arial;
     line-height: 1.4;
-    bavkground-color:black;
   }
 
   .btn {

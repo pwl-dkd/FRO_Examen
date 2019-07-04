@@ -11,23 +11,26 @@
 
             <div id=center>
                 <div >
-                    <p id="text_logo">SixFeetDown</p>
+                    <router-link id="shit" to="/"><p id="text_logo" v-on:click="testing" >SixFeetDown</p></router-link>
                 </div>
             </div> 
 
             <div class="side"  id="right">
+                <router-link id="cart_inoontje" class="header_link" to="/cart">
                 <i class="icontje fas fa-shopping-cart"></i>
+                </router-link>
                 <!-- <i class="icontje far fa-user"></i> -->
             </div>
         </div>
-        <div id="nav">
-            <router-link class="header_link" to="/">HOME</router-link>
-            <router-link class="header_link" to="/collection">COLLECTION</router-link>
-            <router-link class="header_link" to="/brands">BRANDS</router-link>
-            <router-link class="header_link" to="/sale">SALE</router-link>
-            <router-link class="header_link" to="/events">EVENTS</router-link>
-            <router-link class="header_link" to="/contact">CONTACT</router-link>
-            <router-link class="header_link" to="/about">ABOUT</router-link>
+        <div id="nav" v-on:click="header_background">
+            <router-link v-on:click="header_background" class="header_link" to="/">HOME</router-link>
+            <router-link v-on:click="header_background" class="header_link" to="/collection">COLLECTION</router-link>
+            <router-link v-on:click="header_background" class="header_link" to="/brands">BRANDS</router-link>
+            <!-- <router-link class="header_link" to="/sale">SALE</router-link> -->
+            <router-link v-on:click="header_background" class="header_link" to="/events">EVENTS</router-link>
+            <!-- <router-link class="header_link" to="/contact">CONTACT</router-link> -->
+            <!-- <router-link class="header_link" to="/contact">CONTACT</router-link> -->
+            <router-link v-on:click="header_background" class="header_link" to="/about">ABOUT</router-link>
         </div>
 
         <div>
@@ -36,9 +39,9 @@
                 <router-link class="balk-knopies" to="/">HOME</router-link>
                 <router-link class="balk-knopies" to="/collection">COLLECTION</router-link>
                 <router-link class="balk-knopies" to="/brands">BRANDS</router-link>
-                <router-link class="balk-knopies" to="/sale">SALE</router-link>
+                <!-- <router-link class="balk-knopies" to="/sale">SALE</router-link> -->
                 <router-link class="balk-knopies" to="/events">EVENTS</router-link>
-                <router-link class="balk-knopies" to="/contact">CoONTACT</router-link>
+                <!-- <router-link class="balk-knopies" to="/contact">CONTACT</router-link> -->
                 <router-link class="balk-knopies" to="/about">ABOUT</router-link>
             </div>
             <div v-on:click="close_sidenav" id="background"></div>
@@ -54,9 +57,7 @@ export default {
         open_sidenav : function() {
             // console.log('open_sidenav');
             let background = document.getElementById('background');
-
             // console.log(background);
-
             document.getElementById('side_menu').style.width = '250px';
             background.setAttribute(
                     "style", "background-color:rgba(0, 0, 0, 0.432); width: calc(100% );");
@@ -64,76 +65,71 @@ export default {
         close_sidenav : function() {
             console.log('close nav');
             let background = document.getElementById('background');
-
             document.getElementById('side_menu').style.width = '0';
-
             background.setAttribute(
                     "style", "background-color:rgba(0, 0, 0, 0.0); width:0;");
+        },
+        testing : function () {
+            console.log("testing ding");
         },
         scroll_header : function () {
             let currentPage = this.$router.currentRoute.name;
             console.log(currentPage);
             let topscroll;
             
-            if(currentPage == 'product' || currentPage == 'brand') {
+            if(currentPage == 'product' || currentPage == 'brand' || currentPage == ' collection') {
                 topscroll = 60;
             } else {
                 topscroll = 500;
             }
-
             
-            if (document.documentElement.scrollTop > topscroll ) {
-
-                if(currentPage != 'product' && currentPage != 'brand') {
+            if (document.documentElement.scrollTop > 500 ) {
+                
                     if (window.innerWidth > 764) {
                     document.getElementById("header").setAttribute(
                     "style", "background: #D77000; ");
-                    }
+                    
                 }
-
                 if (window.innerWidth > 988) {
                     
                     document.getElementById("nav").setAttribute(
                     "style", "width:70%;          position: absolute; top: 0px; right: 15%;");
                     
                     document.getElementById("center").style.display = 'none';
+                    document.getElementById("cart_inoontje").style.paddingTop = '0px';
                 }
-
                 if (window.innerWidth < 988) {
                     
                     document.getElementById("center").style.display = 'inline-block';
                 }
-
                 // console.log('if3');
-
             } else {
-
                 // console.log('else');
-
                 if (window.innerWidth > 764) {
-                    if(currentPage != 'product'  && currentPage != 'brand') {
+                    if  (currentPage == 'home' || currentPage == 'about' || currentPage == 'events') {
                         document.getElementById("header").setAttribute(
                         "style", "background: #linear-gradient(to bottom, #25211e 0%, rgba(37,33,30,0) 100%);  ");
                     }
                 }
-
                 if (window.innerWidth > 988) {
                     document.getElementById("nav").setAttribute(
                     "style", "width:100%;      transform: translate(0%, 0px); ");
                     document.getElementById("center").style.display = 'inline-block';
+                    document.getElementById("cart_inoontje").style.paddingTop = '20px';
                 }
             }
         },
     
         header_background : function () {
+            console.log("headerbackground");
           let currentPage = this.$router.currentRoute.name;  
-          console.log('curren page van background is '+ currentPage);
-            if(currentPage == 'product' || currentPage == 'brand') {      
-                document.getElementById("header").setAttribute("style", "background: #D77000; ");
-            } else {
-                console.log('ecpc else');
+          console.log('current page  is '+ currentPage);
+            if(currentPage == 'product' || currentPage == 'brand' || currentPage == 'collection') {      
+                document.getElementById("header").setAttribute("style", "background: #D77000 !important; ");
+            } 
+            else if  (currentPage == 'home' || currentPage == 'about' || currentPage == 'events') {
                 document.getElementById("header").setAttribute(
-                "style", " background: linear-gradient(to bottom, #25211e 0%, rgba(37,33,30,0) 100%) !important;  ");
+                        "style", "background: #linear-gradient(to bottom, #25211e 0%, rgba(37,33,30,0) 100%);  ");
             }
         }
     },
@@ -145,70 +141,17 @@ export default {
         window.addEventListener('DOMContentLoaded', this.header_background);
         // this.header_background();
         
-
     }
 }
-
-
-
-
-var header =  document.getElementById("header");
-// var text_logo = document.getElementById('text_logo');
-
-// function openSlideMenu(){
-//     console.log('open');
-//     // document.getElementById('side_menu').style.width = '250px';
-//     console.log (document.getElementById('side_menu'));
-// }
-
-// function closeSlideMenu(){
-//     console.log('close');
-//     // document.getElementById('side_menu').style.width = '0';
-// }
-
-// openSlideMenu();
-// closeSlideMenu();
-
-// window.onscroll = function() {scrollFunction()};
-
-// console.log(header);
-
-// function scrollFunction() {
-//     // if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 480) {
-//     //     document.getElementById("header").setAttribute(
-//     //         "style", "background: #D77000; ");
-
-//     //     if (window.innerWidth > 988) {
-//     //         document.getElementById("nav").setAttribute(
-//     //     "style", "width:70%;          position: absolute; top: 0px; right: 15%;");
-//     //         document.getElementById("center").style.display = 'none';
-//     //     }
-
-//     // } else {
-//     //     document.getElementById("header").setAttribute(
-//     //     "style", "background: #linear-gradient(to bottom, #25211e 0%, rgba(37,33,30,0) 100%);  ");
-
-//     //     if (window.innerWidth > 988) {
-//     //         document.getElementById("nav").setAttribute(
-//     //         "style", "width:100%;      transform: translate(0%, 0px); ");
-//     //         document.getElementById("center").style.display = 'inline-block';
-//     //     }
-//     // }
-
-
-    
-// }
-
-
-
-
-
- 
 
 </script>
 
 
 <style scoped>
+
+#shit {
+    text-decoration: none !important;
+}
     #header {
         /* background:#333; */
         position: fixed;
@@ -274,6 +217,9 @@ var header =  document.getElementById("header");
         font-weight: 100;
         font-size: 30px;
         padding-top: 10px;
+        cursor:pointer;
+        text-decoration: none !important;
+        color:white !important;
     }
 
     #nav {
@@ -381,6 +327,9 @@ var header =  document.getElementById("header");
 
 
     @media screen and (max-width:988px) {
+        #cart_inoontje {
+            padding-top: 0px !important;
+        }
         #nav {
             display:none;
         }
