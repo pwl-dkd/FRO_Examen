@@ -552,7 +552,7 @@ export default {
   .product_image {
       width:255px;
       border-radius:5px;
-      box-shadow: 0px 6px 14px 3px rgba(0,0,0,0.14);
+      box-shadow: 0px 3px 14px 3px rgba(0,0,0,0.14);
   }
 
 
