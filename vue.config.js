@@ -1,5 +1,5 @@
 module.exports = {
     publicPath: process.env.NODE_ENV === 'production'
-        ? '/vue_gedoe/'
+        ? '/FRO-examen/Y.2'
         : '/home'
 }

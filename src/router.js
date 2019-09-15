@@ -16,7 +16,7 @@ Vue.use(Router)
 
 export default new Router({
   mode: 'history',
-  base: '/vue_gedoe/',
+  base: '/FRO-examen/Y.2',
   hashbang: false,
   linkActiveClass: 'active',
   routes: [
